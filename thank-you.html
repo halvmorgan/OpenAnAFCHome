@@ -11,7 +11,17 @@
 .steps li{margin:6px 0}
 .callbox{background:#eef3f2;border-left:4px solid var(--amber);border-radius:6px;padding:18px 20px;margin-top:34px}
 .callbox h2{margin-top:0;font-size:1.25rem}
-</style></head><body>
+</style><!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','3702520369896985');
+fbq('track','PageView');
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1;fbq('track','InitiateCheckout',{value:call?197:67,currency:'USD',content_name:call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
+try{if(!sessionStorage.getItem('afc_purchase_tracked')){fbq('track','Purchase',{value:67,currency:'USD',content_name:'Michigan AFC Startup Playbook'});sessionStorage.setItem('afc_purchase_tracked','1');}}catch(e){fbq('track','Purchase',{value:67,currency:'USD',content_name:'Michigan AFC Startup Playbook'});}
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3702520369896985&ev=PageView&noscript=1" alt=""></noscript>
+<!-- End Meta Pixel -->
+</head><body>
 <header class="topbar"><div class="wrap topbar-in"><a class="brand" href="/">Open an AFC Home</a></div></header>
 <main class="wrap legal">
 <p class="eyebrow">Thank you for your purchase</p>
