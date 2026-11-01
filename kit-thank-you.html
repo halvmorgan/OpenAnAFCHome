@@ -16,7 +16,7 @@
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','3702520369896985');
 fbq('track','PageView');
-document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1,kit=a.hasAttribute('data-kit'),up=a.hasAttribute('data-upgrade');fbq('track','InitiateCheckout',{value:up?230:kit?297:call?197:67,currency:'USD',content_name:up?'Operator Kit Upgrade':kit?'AFC Operator Kit':call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1,kit=a.hasAttribute('data-kit'),up=a.hasAttribute('data-upgrade'),lk=a.hasAttribute('data-launch-kit');fbq('track','InitiateCheckout',{value:lk?900:up?230:kit?297:call?197:67,currency:'USD',content_name:lk?'AFC Licensing Launch':up?'Operator Kit Upgrade':kit?'AFC Operator Kit':call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
 try{if(!sessionStorage.getItem('afc_kit_tracked')){fbq('track','Purchase',{value:297,currency:'USD',content_name:'AFC Operator Kit'});sessionStorage.setItem('afc_kit_tracked','1');}}catch(e){fbq('track','Purchase',{value:297,currency:'USD',content_name:'AFC Operator Kit'});}
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3702520369896985&ev=PageView&noscript=1" alt=""></noscript>
@@ -26,7 +26,7 @@ try{if(!sessionStorage.getItem('afc_kit_tracked')){fbq('track','Purchase',{value
 <main class="wrap legal">
 <p class="eyebrow">Thank you for your purchase</p>
 <h1>Your Operator Kit files are ready</h1>
-<p class="lede">Download all three files below and save them to your computer. We've also emailed you these links, so you'll have them in your inbox.</p>
+<p class="lede">Download all three files below and save them to your computer. We've also emailed you these links, so you'll have them in your inbox. Don't see our email? Check your Promotions or Spam folder for a message from Hal Morgan.</p>
 <div class="dl">
   <a class="btn btn-primary" href="https://drive.google.com/file/d/1cSExrE2sZDf7w_NqvIKrQg_OJyakrfjk/view?usp=sharing" target="_blank" rel="noopener">Download the Administrative Binder (PDF)</a>
   <a class="btn btn-ghost" href="https://drive.google.com/file/d/1qZ2tq_AVTWdYaVPqRPPs1lMHmdud-u6U/view?usp=sharing" target="_blank" rel="noopener">Download the Playbook (PDF)</a>
@@ -40,9 +40,10 @@ try{if(!sessionStorage.getItem('afc_kit_tracked')){fbq('track','Purchase',{value
   <li>Have an attorney review the policies, forms and agreements before you use them, and go over them with your LARA licensing consultant.</li>
 </ol>
 <div class="callbox">
-  <h2>Want a second set of eyes on your plan?</h2>
-  <p>A 30–45 minute Strategy Call with Hal covers your property, population, budget and next steps. The $197 is credited toward the Licensing Launch package later.</p>
-  <a class="btn btn-primary" href="https://buy.stripe.com/fZu9AVecd91j5R3edpbII01">Book a Strategy Call</a>
+  <h2>Ready for help getting licensed?</h2>
+  <p>Licensing Launch adds three 45-minute coaching calls with Hal, a review of your license application packet with written notes, and a video walkthrough of your home before inspection. You already own the Kit, so your $297 is credited: <b>upgrade for $900</b> instead of $1,197.</p>
+  <a class="btn btn-primary" href="https://buy.stripe.com/9B628t2tv6Tb5R35GTbII06" data-launch-kit>Upgrade to Licensing Launch for $900</a>
+  <p class="fine" style="margin-top:12px">Full refund within 7 days if your first call hasn't happened. <a href="/licensing-launch-terms.html">Service Agreement</a>. Just want one conversation? <a href="https://buy.stripe.com/fZu9AVecd91j5R3edpbII01">Book a single Strategy Call ($197)</a>.</p>
 </div>
 <p class="fine" style="margin-top:30px">Trouble opening a file? Call or text (810) 428-1343 or email <a href="mailto:ecenturyapp@gmail.com">ecenturyapp@gmail.com</a>.</p>
 </main>
