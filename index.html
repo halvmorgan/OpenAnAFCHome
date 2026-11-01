@@ -19,7 +19,7 @@
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','3702520369896985');
 fbq('track','PageView');
-document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1,kit=a.hasAttribute('data-kit'),up=a.hasAttribute('data-upgrade');fbq('track','InitiateCheckout',{value:up?230:kit?297:call?197:67,currency:'USD',content_name:up?'Operator Kit Upgrade':kit?'AFC Operator Kit':call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1,kit=a.hasAttribute('data-kit'),up=a.hasAttribute('data-upgrade'),ll=a.hasAttribute('data-launch'),lc=a.hasAttribute('data-launch-credit');fbq('track','InitiateCheckout',{value:lc?1000:ll?1197:up?230:kit?297:call?197:67,currency:'USD',content_name:(ll||lc)?'AFC Licensing Launch':up?'Operator Kit Upgrade':kit?'AFC Operator Kit':call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3702520369896985&ev=PageView&noscript=1" alt=""></noscript>
 <!-- End Meta Pixel -->
@@ -210,6 +210,19 @@ document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.targe
           <p class="fine" style="margin-top:12px"><b>30-day money-back guarantee.</b> Email or text within 30 days for a full refund.</p>
         </article>
         <article class="offer">
+          <h3>Licensing Launch</h3>
+          <p class="price">$1,197</p>
+          <ul class="ticks">
+            <li>Everything in the Operator Kit</li>
+            <li>Three 45-minute coaching calls with Hal by Zoom</li>
+            <li>Review of your license application packet, with written notes in 5 business days</li>
+            <li>Pre-inspection video walkthrough of your home, with a written fix list</li>
+            <li>Use within 6 months. Limited to 5 new clients a month.</li>
+          </ul>
+          <a class="btn btn-primary btn-block" href="https://buy.stripe.com/aFa6oJfghgtL2ERc5hbII04" data-launch>Start Licensing Launch</a>
+          <p class="fine" style="margin-top:12px">Full refund within 7 days if your first call hasn't happened. <a href="/licensing-launch-terms.html">Service Agreement</a>. Already bought a Strategy Call? <a href="https://buy.stripe.com/6oU00l8RT91j7Zb5GTbII05" data-launch-credit>Pay $1,000 instead</a>.</p>
+        </article>
+        <article class="offer">
           <h3>Strategy Call with Hal</h3>
           <p class="price">$197</p>
           <ul class="ticks">
@@ -221,7 +234,7 @@ document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.targe
           <a class="btn btn-ghost btn-block" href="https://buy.stripe.com/fZu9AVecd91j5R3edpbII01">Book a Strategy Call</a>
         </article>
       </div>
-      <p class="soon">Coming soon: the <b>Licensing Launch</b> package (Operator Kit plus 3 calls, application review and a pre-inspection walkthrough). Questions? Email <a href="mailto:ecenturyapp@gmail.com">ecenturyapp@gmail.com</a>.</p>
+      <p class="soon">Not sure which fits? Call or text Hal at (810) 428-1343 or email <a href="mailto:ecenturyapp@gmail.com">ecenturyapp@gmail.com</a>.</p>
       <p class="soon">Not ready to buy? Start with the free <a href="https://openafchome.com/free-checklist/?utm_source=salespage">Michigan AFC Licensing Checklist</a>.</p>
     </div>
   </section>

@@ -110,7 +110,7 @@ blockquote p{font-family:var(--display);font-size:1.25rem;color:var(--ink);margi
 cite{font-style:normal;font-size:.85rem;color:var(--muted)}
 
 /* offers */
-.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px}
+.offers{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:28px}
 .offer{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .offer .ticks{flex:1}
 .offer-main{border:2px solid var(--ink)}
