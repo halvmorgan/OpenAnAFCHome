@@ -16,7 +16,7 @@
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','3702520369896985');
 fbq('track','PageView');
-document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1;fbq('track','InitiateCheckout',{value:call?197:67,currency:'USD',content_name:call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1,kit=a.hasAttribute('data-kit'),up=a.hasAttribute('data-upgrade');fbq('track','InitiateCheckout',{value:up?230:kit?297:call?197:67,currency:'USD',content_name:up?'Operator Kit Upgrade':kit?'AFC Operator Kit':call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
 try{if(!sessionStorage.getItem('afc_purchase_tracked')){fbq('track','Purchase',{value:67,currency:'USD',content_name:'Michigan AFC Startup Playbook'});sessionStorage.setItem('afc_purchase_tracked','1');}}catch(e){fbq('track','Purchase',{value:67,currency:'USD',content_name:'Michigan AFC Startup Playbook'});}
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3702520369896985&ev=PageView&noscript=1" alt=""></noscript>
@@ -44,9 +44,9 @@ try{if(!sessionStorage.getItem('afc_purchase_tracked')){fbq('track','Purchase',{
   <a class="btn btn-primary" href="https://buy.stripe.com/fZu9AVecd91j5R3edpbII01">Book a Strategy Call</a>
 </div>
 <div class="callbox" style="background:#fffaf0">
-  <h2>Coming next: the Operator Kit</h2>
-  <p>The Playbook plus a full administrative binder: the written policies and procedures Michigan AFC homes need to have on file, ready to adapt for your home. Playbook buyers will hear about it first.</p>
-  <a class="btn btn-ghost" href="mailto:ecenturyapp@gmail.com?subject=Operator%20Kit%20waitlist&amp;body=Please%20add%20me%20to%20the%20Operator%20Kit%20waitlist.%20My%20name%20is%3A">Join the Operator Kit waitlist</a>
+  <h2>Add the Operator Kit for $230</h2>
+  <p>Get the administrative binder I used to run my home: 29 policies, procedures and forms, updated to Michigan's current AFC licensing rules and ready to fill in. You already own the Playbook, so you pay only the difference.</p>
+  <a class="btn btn-primary" href="UPGRADE_LINK" data-upgrade>Upgrade to the Operator Kit</a>
 </div>
 <p class="fine" style="margin-top:30px">Trouble opening a file? Call or text (810) 428-1343 or email <a href="mailto:ecenturyapp@gmail.com">ecenturyapp@gmail.com</a>.</p>
 </main>

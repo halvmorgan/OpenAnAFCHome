@@ -19,7 +19,7 @@
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','3702520369896985');
 fbq('track','PageView');
-document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1;fbq('track','InitiateCheckout',{value:call?197:67,currency:'USD',content_name:call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1,kit=a.hasAttribute('data-kit'),up=a.hasAttribute('data-upgrade');fbq('track','InitiateCheckout',{value:up?230:kit?297:call?197:67,currency:'USD',content_name:up?'Operator Kit Upgrade':kit?'AFC Operator Kit':call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3702520369896985&ev=PageView&noscript=1" alt=""></noscript>
 <!-- End Meta Pixel -->
@@ -30,7 +30,7 @@ document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.targe
   <div class="wrap topbar-in">
     <a class="brand" href="/">Open an AFC Home</a>
     <nav aria-label="Main">
-      <a href="#inside">What's inside</a>
+      <a href="#inside">What's inside</a> <a href="#binder">Operator Kit</a>
       <a href="#about">About Hal</a>
       <a href="#faq">FAQ</a>
       <a class="nav-buy" href="https://buy.stripe.com/8x2dRb1prdhzdjv6KXbII00">Get the Playbook</a>
@@ -154,11 +154,37 @@ document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.targe
     </div>
   </section>
 
+  <section class="band" id="binder">
+    <div class="wrap">
+      <p class="eyebrow">The Operator Kit</p>
+      <h2>The administrative binder I used to run my home</h2>
+      <p class="lede">Licensing expects your written policies, procedures and forms to be on file and in use. This is the binder I kept for more than 20 years, cleaned up, updated to Michigan's current AFC licensing rules (R 400.601&ndash;400.745, effective November 3, 2025) and turned into fill-in templates.</p>
+      <div class="two-col">
+        <ul class="ticks">
+          <li>29 tabbed documents, 121 pages</li>
+          <li>Program statement, admission and discharge policies, emergency discharge, house rules, grievance procedure</li>
+          <li>Fee policy, refund agreement, resident account statement, home agreement and lease</li>
+          <li>Personnel policies, job descriptions, employee complaint procedure and a full employment application</li>
+          <li>Staffing patterns, staff schedule, organizational chart, designated person form</li>
+          <li>Emergency and fire procedures, floor plan and escape plan, evacuation drill log, weekly menu, resident register</li>
+          <li>A rule reference page that points each topic to the current rule</li>
+        </ul>
+        <div class="samples">
+          <img src="img/binder-contents.jpg" alt="Binder contents page" loading="lazy" width="765" height="990">
+          <img src="img/binder-program-statement.jpg" alt="Program Statement template" loading="lazy" width="765" height="990">
+          <img src="img/binder-emergency-discharge.jpg" alt="Emergency Discharge Policy template" loading="lazy" width="765" height="990">
+          <img src="img/binder-employment-application.jpg" alt="Employment Application template" loading="lazy" width="765" height="990">
+        </div>
+      </div>
+      <p class="fine" style="margin-top:18px"><b>Templates, not legal advice.</b> These are the policies and forms I used in my own home. I'm not a lawyer. Have an attorney review any policy, procedure, form or agreement before you use it, to be certain it meets current regulations and fits your home and license.</p>
+    </div>
+  </section>
+
   <section class="band band-quiet" id="pricing">
     <div class="wrap">
-      <h2 class="center-ish">Start with the Playbook</h2>
+      <h2 class="center-ish">Choose your starting point</h2>
       <div class="offers">
-        <article class="offer offer-main">
+        <article class="offer">
           <h3>The Playbook</h3>
           <p class="price">$67</p>
           <ul class="ticks">
@@ -169,6 +195,19 @@ document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.targe
           </ul>
           <a class="btn btn-primary btn-block" href="https://buy.stripe.com/8x2dRb1prdhzdjv6KXbII00">Get the Playbook</a>
           <p class="fine" style="margin-top:12px"><b>30-day money-back guarantee.</b> If the Playbook isn't useful to you, email or text within 30 days for a full refund. No forms, no hassle.</p>
+        </article>
+        <article class="offer offer-main">
+          <h3>The Operator Kit</h3>
+          <p class="price">$297</p>
+          <ul class="ticks">
+            <li>Everything in the Playbook</li>
+            <li>The full administrative binder: 29 policies, procedures and forms</li>
+            <li>Updated to Michigan's current AFC licensing rules</li>
+            <li>Fill-in templates with a rule reference page</li>
+            <li>Instant download after checkout</li>
+          </ul>
+          <a class="btn btn-primary btn-block" href="KIT_LINK" data-kit>Get the Operator Kit</a>
+          <p class="fine" style="margin-top:12px"><b>30-day money-back guarantee.</b> Email or text within 30 days for a full refund.</p>
         </article>
         <article class="offer">
           <h3>Strategy Call with Hal</h3>
@@ -182,7 +221,7 @@ document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.targe
           <a class="btn btn-ghost btn-block" href="https://buy.stripe.com/fZu9AVecd91j5R3edpbII01">Book a Strategy Call</a>
         </article>
       </div>
-      <p class="soon">Coming soon: the <b>Operator Kit</b> (Playbook plus a full administrative binder of policies) and the <b>Licensing Launch</b> package. <a href="mailto:ecenturyapp@gmail.com?subject=Operator%20Kit%20waitlist&amp;body=Please%20add%20me%20to%20the%20Operator%20Kit%20waitlist.%20My%20name%20is%3A">Join the Operator Kit waitlist</a> and you'll hear first when it's ready.</p>
+      <p class="soon">Coming soon: the <b>Licensing Launch</b> package (Operator Kit plus 3 calls, application review and a pre-inspection walkthrough). Questions? Email <a href="mailto:ecenturyapp@gmail.com">ecenturyapp@gmail.com</a>.</p>
       <p class="soon">Not ready to buy? Start with the free <a href="https://openafchome.com/free-checklist/?utm_source=salespage">Michigan AFC Licensing Checklist</a>.</p>
     </div>
   </section>
