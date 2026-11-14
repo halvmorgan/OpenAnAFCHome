@@ -11,12 +11,17 @@
 .steps li{margin:6px 0}
 .callbox{background:#eef3f2;border-left:4px solid var(--amber);border-radius:6px;padding:18px 20px;margin-top:34px}
 .callbox h2{margin-top:0;font-size:1.25rem}
+.offerrow{display:flex;gap:22px;align-items:flex-start}
+.offerrow img{width:200px;max-width:40%;border-radius:8px;flex-shrink:0}
+.offerrow .ticks{margin:10px 0 16px;padding-left:1.2em}
+.offerrow .ticks li{margin:4px 0}
+@media(max-width:560px){.offerrow{flex-direction:column}.offerrow img{width:100%;max-width:300px}}
 </style><!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','3702520369896985');
 fbq('track','PageView');
-document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1,kit=a.hasAttribute('data-kit'),up=a.hasAttribute('data-upgrade');fbq('track','InitiateCheckout',{value:up?230:kit?297:call?197:67,currency:'USD',content_name:up?'Operator Kit Upgrade':kit?'AFC Operator Kit':call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="buy.stripe.com"]');if(!a)return;var call=a.href.indexOf('fZu9AVecd91j5R3edpbII01')>-1,kit=a.hasAttribute('data-kit'),up=a.hasAttribute('data-upgrade'),ll=a.hasAttribute('data-launch'),lc=a.hasAttribute('data-launch-credit');fbq('track','InitiateCheckout',{value:lc?1000:ll?1197:up?230:kit?297:call?197:67,currency:'USD',content_name:(ll||lc)?'AFC Licensing Launch':up?'Operator Kit Upgrade':kit?'AFC Operator Kit':call?'AFC Strategy Call':'Michigan AFC Startup Playbook'});});
 try{if(!sessionStorage.getItem('afc_purchase_tracked')){fbq('track','Purchase',{value:67,currency:'USD',content_name:'Michigan AFC Startup Playbook'});sessionStorage.setItem('afc_purchase_tracked','1');}}catch(e){fbq('track','Purchase',{value:67,currency:'USD',content_name:'Michigan AFC Startup Playbook'});}
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3702520369896985&ev=PageView&noscript=1" alt=""></noscript>
@@ -26,7 +31,7 @@ try{if(!sessionStorage.getItem('afc_purchase_tracked')){fbq('track','Purchase',{
 <main class="wrap legal">
 <p class="eyebrow">Thank you for your purchase</p>
 <h1>Your Playbook is ready</h1>
-<p class="lede">Your download links are just below, and we've also emailed them to you. Before you go, there's one offer for Playbook owners.</p>
+<p class="lede">Your download links are just below, and we've also emailed them to you. Before you go, here's one offer just for Playbook owners.</p>
 <div class="callbox" style="background:#fffaf0;border:2px solid #e3a72f">
   <p class="eyebrow" style="margin:0 0 6px">For Playbook owners</p>
   <h2>Add the Operator Kit for $230</h2>
@@ -47,10 +52,36 @@ try{if(!sessionStorage.getItem('afc_purchase_tracked')){fbq('track','Purchase',{
   <li>Put your own house, rates and costs into the spreadsheet to see your break-even.</li>
   <li>Then call LARA's AFC licensing unit at 1-866-685-0006 and ask for an information meeting before you apply.</li>
 </ol>
-<div class="callbox">
-  <h2>Want a second set of eyes on your plan?</h2>
-  <p>A 30–45 minute Strategy Call with Hal covers your property, population, budget and next steps. The $197 is credited toward the Licensing Launch package later.</p>
-  <a class="btn btn-primary" href="https://buy.stripe.com/fZu9AVecd91j5R3edpbII01">Book a Strategy Call</a>
+<div class="callbox" id="strategy-call">
+  <p class="eyebrow" style="margin:0 0 6px">Next step: talk it through</p>
+  <div class="offerrow">
+    <img src="img/strategy-call.jpg" alt="A one-on-one Strategy Call about opening an AFC home" width="480" height="853" loading="lazy">
+    <div>
+      <h2>Get your questions answered on a Strategy Call ($197)</h2>
+      <p>The Playbook shows you the steps. A Strategy Call fits them to <b>your</b> house and plans before you spend money on the wrong things.</p>
+      <ul class="ticks">
+        <li>30 to 45 minutes, one-on-one by phone with Hal</li>
+        <li>Your property, population, budget and next steps</li>
+        <li>Hal calls or texts within 1 business day to schedule</li>
+        <li>The $197 is credited toward Licensing Launch if you join later</li>
+      </ul>
+      <a class="btn btn-primary" href="https://buy.stripe.com/fZu9AVecd91j5R3edpbII01">Book my Strategy Call</a>
+    </div>
+  </div>
+</div>
+<div class="callbox" id="launch">
+  <p class="eyebrow" style="margin:0 0 6px">Want me with you all the way to your license?</p>
+  <h2>Licensing Launch ($1,197)</h2>
+  <p>For people who want help from first call to inspection day, not just a plan.</p>
+  <ul class="steps">
+    <li>Everything in the Operator Kit (the 29-tab administrative binder)</li>
+    <li>Three 45-minute coaching calls with Hal by Zoom</li>
+    <li>Review of your license application packet, with written notes in 5 business days</li>
+    <li>Pre-inspection video walkthrough of your home, with a written fix list</li>
+    <li>Use within 6 months. Limited to 5 new clients a month.</li>
+  </ul>
+  <p style="margin-top:16px"><a class="btn btn-primary" href="https://buy.stripe.com/aFa6oJfghgtL2ERc5hbII04" data-launch>Start Licensing Launch</a></p>
+  <p class="fine" style="margin-top:12px">Full refund within 7 days if your first call hasn't happened. <a href="/licensing-launch-terms.html">Service Agreement</a>. Already bought a Strategy Call? <a href="https://buy.stripe.com/6oU00l8RT91j7Zb5GTbII05" data-launch-credit>Pay $1,000 instead</a>.</p>
 </div>
 <p class="fine" style="margin-top:30px">Trouble opening a file? Call or text (810) 428-1343 or email <a href="mailto:ecenturyapp@gmail.com">ecenturyapp@gmail.com</a>.</p>
 </main>
